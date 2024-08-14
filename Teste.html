@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+
+
+function pulaLinha() {
+
+   document.write("<br>");	
+   document.write("<br>");	
+}
+
+function mostra(frase) {
+
+   document.write(frase);
+   pulaLinha();
+}
+
+var vitorias = parseInt(prompt("Digite o número de vitórias"));
+var empates = parseInt(prompt("Digite o número de empates"));
+var pontos = vitorias * 3 + empates;
+
+mostra("<h1>A quantidade de pontos é " + pontos);
+
+    if (pontos > 25) {
+        mostra("Melhor");
+    }   
+    
+    if (pontos < 25) {
+        mostra("Pior");
+    }
+
+    if (pontos == 25) {
+        mostra("Igual");
+    }
+
+
+</script>
+
+
+<script src="java.js" defer></script>
