@@ -1,0 +1,46 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+function addSquare(x, y, width, height, color) {
+    
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = color;
+    pincel.fillRect(x, y, width, height);
+    pincel.strokeStyle = 'black';
+    pincel.strokeRect(x, y, width, height);
+    
+}
+
+function addText(x, y, text) {
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.font = '15x Georgia';
+    pincel.fillStyle = 'black';
+    pincel.fillText(text, x, y);
+
+}
+
+function addBars(x, y, serie, color, text) {
+
+    addText(x, y - 10, text);
+
+        var somaheight = 0;
+        for(var i = 0; i < serie.length; i++) {
+        var height = serie[i];
+        addSquare(x, y, 50, height, colors[i]);
+        somaheight = somaheight + height;
+        }
+}
+
+    var colors = ['blue', 'green', 'yellow', 'red']; 
+    var serie2015 = [50,25,20,5];
+    var serie2016 = [65,20,13,2];
+
+    addBars(50, 50, serie2015, colors, '2015');
+    addBars(150, 50, serie2016, colors, '2016');
+
+</script>
